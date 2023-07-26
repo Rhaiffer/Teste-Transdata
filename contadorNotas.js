@@ -14,12 +14,7 @@ function retirarNotas(valorParaRetirar, valorNoCaixa) {
       quantidadeNotas[`R$${nota}`] = qtdNotas;
       valorRestante %= nota;
     }
-    if (nota === 2) {
-      quantidadeNotas['R$2'] += Math.floor(valorRestante / 2);
-      valorRestante %= 2;
-    }
   }
-
   const notasRetiradas = [];
   for (let nota of notasDisponiveis) {
     const qtd = quantidadeNotas[`R$${nota}`] || 0;
@@ -32,7 +27,7 @@ function retirarNotas(valorParaRetirar, valorNoCaixa) {
 }
 
 const valorNoCaixa = 10000; // Informe aqui o valor que o caixa possui
-const valorParaRetirar = 758;
+const valorParaRetirar = 760;
 
 try {
   const resultado = retirarNotas(valorParaRetirar, valorNoCaixa);
